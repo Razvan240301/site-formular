@@ -8,34 +8,51 @@
         body {
             margin: 0;
             padding: 0;
-            background-image: url('fundal.webp'); /* Imaginea de fundal */
-            background-size: cover; /* Imaginea acoperă întregul fundal */
-            background-repeat: no-repeat; /* Nu repeta imaginea */
-            background-position: center; /* Imaginea este centrată */
             font-family: Arial, sans-serif;
         }
 
-        /* Stiluri pentru ecrane mici (ex. telefoane mobile) */
+        /* Fundal cu imaginea WebP */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('fundall.webp'); /* Calea imaginii */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: -1; /* Fundalul este sub conținut */
+        }
+
+        /* Fallback pentru browsere care nu suportă WebP */
+        @supports not (background-image: url('image.webp')) {
+            body::before {
+                background-image: url('fundall.jpg'); /* Imagine fallback în format JPG, dacă există */
+            }
+        }
+
+        /* Stiluri pentru ecrane mici */
         @media (max-width: 768px) {
-            body {
-                background-size: contain; /* Ajustează imaginea pentru a se vedea complet pe telefoane */
-                background-position: top; /* Imaginea începe de sus */
-                background-repeat: no-repeat; /* Nu repeta imaginea */
+            body::before {
+                background-size: contain; /* Imaginea complet vizibilă pe telefoane */
+                background-position: top;
             }
         }
 
         form {
-            background: rgba(255, 255, 255, 0.9); /* Fundal alb semi-transparent pentru formular */
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             margin: 50px auto;
-            max-width: 90%; /* Formularul se ajustează pe ecranele mici */
-            width: 300px; /* Lățime fixă pentru ecrane mari */
+            max-width: 90%;
+            width: 300px;
             border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         label {
-            font-weight: bold; /* Text îngroșat pentru etichete */
+            font-weight: bold;
         }
 
         label, input, button {
