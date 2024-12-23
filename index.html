@@ -5,38 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formular</title>
     <style>
-    body {
-        margin: 0;
-        padding: 0;
-        background-image: url('fundal.webp'); /* Imaginea de fundal */
-        background-size: cover; /* Imaginea acoperă întregul fundal */
-        background-repeat: no-repeat;
-        background-position: center;
-        font-family: Arial, sans-serif;
-    }
-
-    @media (max-width: 768px) {
+        /* Stilizare generală */
         body {
-            background-size: contain; /* Ajustează imaginea pentru ecrane mici */
-            background-position: top;
+            margin: 0;
+            padding: 0;
+            background-image: url('fundal.webp'); /* Imaginea de fundal */
+            background-size: cover; /* Fundal acoperă ecranul complet */
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif;
         }
-    }
-</style>
 
+        /* Ajustare pentru ecrane mici */
+        @media (max-width: 768px) {
+            body {
+                background-size: contain; /* Ajustează imaginea pentru ecrane mici */
+                background-position: top;
+            }
         }
+
+        /* Stilizare formular */
         form {
-            background: rgba(255, 255, 255, 0.8); /* Fundal alb transparent pentru formular */
+            background: rgba(255, 255, 255, 0.8); /* Fundal alb transparent */
             padding: 20px;
             margin: 50px auto;
             width: 300px;
             border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+        /* Stilizare etichete, inputuri și butoane */
         label, input, button {
             display: block;
             width: 100%;
             margin-bottom: 10px;
         }
+
+        /* Stilizare buton */
         button {
             background: #28a745;
             color: white;
@@ -45,24 +50,24 @@
             cursor: pointer;
             border-radius: 5px;
         }
+
         button:hover {
             background: #218838;
         }
     </style>
 </head>
 <body>
-    <form action="https://formspree.io/f/mqakraap" method="POST">
+    <form action="https://formspree.io/f/mqakrkap" method="POST">
         <label for="name">Nume:</label>
-        <input type="text" id="name" name="name" required>
-        
+        <input type="text" id="name" name="name" placeholder="Nume" required>
+
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        
+        <input type="email" id="email" name="email" placeholder="Email" required>
+
         <label for="phone">Telefon:</label>
-        <input type="tel" id="phone" name="phone" required>
-        
+        <input type="tel" id="phone" name="phone" placeholder="Telefon" required>
+
         <button type="submit">Trimite</button>
     </form>
 </body>
 </html>
-
