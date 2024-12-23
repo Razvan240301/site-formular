@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Fundal cu imaginea WebP */
+        /* Fundal general */
         body::before {
             content: "";
             position: fixed;
@@ -20,24 +20,30 @@
             width: 100%;
             height: 100%;
             background-image: url('fundall.webp'); /* Calea imaginii */
-            background-size: cover;
+            background-size: cover; /* Imaginea acoperă întregul fundal */
             background-repeat: no-repeat;
             background-position: center;
             z-index: -1; /* Fundalul este sub conținut */
         }
 
-        /* Fallback pentru browsere care nu suportă WebP */
+        /* Fallback pentru browsere fără suport WebP */
         @supports not (background-image: url('image.webp')) {
             body::before {
-                background-image: url('fundall.jpg'); /* Imagine fallback în format JPG, dacă există */
+                background-image: url('fundall.jpg'); /* Imagine fallback în format JPG */
             }
         }
 
-        /* Stiluri pentru ecrane mici */
+        /* Stiluri speciale pentru telefoane */
         @media (max-width: 768px) {
             body::before {
-                background-size: contain; /* Imaginea complet vizibilă pe telefoane */
-                background-position: top;
+                background-size: contain; /* Imagine complet vizibilă pe telefoane */
+                background-position: top; /* Poziționează imaginea în partea de sus */
+                min-height: 100%; /* Asigură că imaginea acoperă întreaga înălțime */
+            }
+
+            form {
+                margin: 20px auto; /* Reduce marginile formularului pentru ecrane mici */
+                width: 90%; /* Formular mai îngust pentru telefoane */
             }
         }
 
