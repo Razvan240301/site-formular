@@ -5,28 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formular</title>
     <style>
-        /* Stilizare generală */
         body {
             margin: 0;
             padding: 0;
             background-image: url('fundal.webp'); /* Imaginea de fundal */
-            background-size: cover; /* Fundal acoperă ecranul complet */
-            background-repeat: no-repeat;
-            background-position: center;
+            background-size: cover; /* Imaginea acoperă întregul fundal */
+            background-repeat: no-repeat; /* Nu repeta imaginea */
+            background-position: center; /* Imaginea este centrată */
             font-family: Arial, sans-serif;
         }
 
-        /* Ajustare pentru ecrane mici */
+        /* Stiluri pentru ecrane mai mici */
         @media (max-width: 768px) {
             body {
                 background-size: contain; /* Ajustează imaginea pentru ecrane mici */
-                background-position: top;
+                background-position: center; /* Imaginea rămâne centrată */
+                background-repeat: no-repeat; /* Nu repeta imaginea */
             }
         }
 
-        /* Stilizare formular */
         form {
-            background: rgba(255, 255, 255, 0.8); /* Fundal alb transparent */
+            background: rgba(255, 255, 255, 0.8); /* Fundal alb transparent pentru formular */
             padding: 20px;
             margin: 50px auto;
             width: 300px;
@@ -34,14 +33,12 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Stilizare etichete, inputuri și butoane */
         label, input, button {
             display: block;
             width: 100%;
             margin-bottom: 10px;
         }
 
-        /* Stilizare buton */
         button {
             background: #28a745;
             color: white;
@@ -57,7 +54,7 @@
     </style>
 </head>
 <body>
-    <form action="https://formspree.io/f/mqakrkap" method="POST">
+    <form action="https://formspree.io/f/your-form-endpoint" method="POST">
         <label for="name">Nume:</label>
         <input type="text" id="name" name="name" placeholder="Nume" required>
 
