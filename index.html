@@ -5,14 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formular</title>
     <style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url('fundal.webp'); /* Imaginea de fundal */
+        background-size: cover; /* Imaginea acoperă întregul fundal */
+        background-repeat: no-repeat;
+        background-position: center;
+        font-family: Arial, sans-serif;
+    }
+
+    @media (max-width: 768px) {
         body {
-            margin: 0;
-            padding: 0;
-            background-image: url('fundal.webp'); /* Imaginea de fundal */
-            background-size: cover; /* Asigură-te că imaginea acoperă tot fundalul */
-            background-repeat: no-repeat;
-            background-position: center;
-            font-family: Arial, sans-serif;
+            background-size: contain; /* Ajustează imaginea pentru ecrane mici */
+            background-position: top;
+        }
+    }
+</style>
+
         }
         form {
             background: rgba(255, 255, 255, 0.8); /* Fundal alb transparent pentru formular */
