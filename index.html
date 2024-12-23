@@ -19,11 +19,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('fundall.webp'); /* Calea imaginii */
-            background-size: cover; /* Imaginea acoperă întregul fundal */
+            background-image: url('fundall.webp'); /* Imaginea ta */
+            background-size: cover; /* Imaginea acoperă întreg ecranul */
             background-repeat: no-repeat;
-            background-position: center;
-            z-index: -1; /* Fundalul este sub conținut */
+            background-position: center; /* Centrată pe ecran */
+            z-index: -1; /* Fundalul rămâne sub conținut */
         }
 
         /* Fallback pentru browsere fără suport WebP */
@@ -36,19 +36,18 @@
         /* Stiluri speciale pentru telefoane */
         @media (max-width: 768px) {
             body::before {
-                background-size: contain; /* Imagine complet vizibilă pe telefoane */
-                background-position: top; /* Poziționează imaginea în partea de sus */
-                min-height: 100%; /* Asigură că imaginea acoperă întreaga înălțime */
+                background-size: cover; /* Imagine complet vizibilă pe ecrane mici */
+                background-position: center; /* Centrată perfect */
             }
 
             form {
-                margin: 20px auto; /* Reduce marginile formularului pentru ecrane mici */
-                width: 90%; /* Formular mai îngust pentru telefoane */
+                margin: 20px auto; /* Ajustare margini pentru telefoane */
+                width: 90%; /* Formular mai compact */
             }
         }
 
         form {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.9); /* Fundal semi-transparent pentru formular */
             padding: 20px;
             margin: 50px auto;
             max-width: 90%;
