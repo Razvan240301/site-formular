@@ -9,28 +9,23 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background: url('fundalul.webp') no-repeat center center fixed; /* Noua imagine de fundal */
-            background-size: cover; /* Asigură acoperirea completă */
-            height: 200vh; /* Extindere pentru scroll */
-        }
-
-        /* Fallback pentru browsere fără suport WebP */
-        @supports not (background-image: url('image.webp')) {
-            body {
-                background-image: url('fundalul.jpg'); /* Imagine fallback */
-            }
+            background: url('fundalul.webp') no-repeat center center fixed; /* Imaginea de fundal */
+            background-size: cover; /* Acoperă complet fundalul */
+            height: 100vh; /* Ajustare pentru scroll */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
         form {
-            background: rgba(255, 255, 255, 0.9); /* Fundal alb semi-transparent pentru formular */
+            background: rgba(255, 255, 255, 0.9); /* Fundal alb semi-transparent */
             padding: 20px;
-            margin: 50px auto;
+            margin: 20px auto;
             max-width: 90%;
-            width: 300px;
+            width: 350px; /* Mărim formularul */
             border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative; /* Formularul este punct de referință pentru imagini */
-            z-index: 1; /* Asigurăm că este sub imagini */
             text-align: center;
         }
 
@@ -70,8 +65,8 @@
         .circle-image {
             position: absolute;
             border-radius: 50%; /* Transformă imaginea în cerc */
-            width: 150px; /* Dimensiunea imaginii */
-            height: 150px; /* Dimensiunea imaginii */
+            width: 200px; /* Dimensiunea mai mare a imaginii */
+            height: 200px;
             object-fit: cover; /* Ajustează imaginea să umple cercul */
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adaugă umbră */
             z-index: 2; /* Imaginea este peste formular */
@@ -79,27 +74,26 @@
 
         /* Imaginea din stânga */
         .circle-image.left {
-            top: 100px; /* Poziționare verticală relativă la formular */
-            left: 10%; /* Poziționare orizontală */
+            top: 20%; /* Ajustare verticală */
+            left: 15%; /* Poziționare orizontală */
         }
 
         /* Imaginea din dreapta */
         .circle-image.right {
-            top: 100px; /* Poziționare verticală relativă la formular */
-            right: 10%; /* Poziționare orizontală */
+            top: 20%; /* Ajustare verticală */
+            right: 15%; /* Poziționare orizontală */
         }
 
-        /* Stil pentru text suplimentar */
-        .extra-content {
-            padding: 50px;
-            text-align: center;
-            color: white;
-            font-size: 24px;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
+    <!-- Imaginea din stânga -->
+    <img src="burgir.webp" alt="Imagine Burger" class="circle-image left">
+
+    <!-- Imaginea din dreapta -->
+    <img src="atlet.webp" alt="Imagine Atlet" class="circle-image right">
+
+    <!-- Formular -->
     <form action="https://formspree.io/f/your-form-endpoint" method="POST">
         <label for="name">Nume:</label>
         <input type="text" id="name" name="name" placeholder="Nume" required>
@@ -112,17 +106,5 @@
 
         <button type="submit">Trimite</button>
     </form>
-
-    <!-- Imaginea din stânga -->
-    <img src="burgir.webp" alt="Imagine Burger" class="circle-image left">
-
-    <!-- Imaginea din dreapta -->
-    <img src="atlet.webp" alt="Imagine Atlet" class="circle-image right">
-
-    <!-- Text suplimentar -->
-    <div class="extra-content">
-        <p>„Slăbește fără să te înfometezi”</p>
-        <p>Alege un stil de viață sănătos cu ajutorul nostru!</p>
-    </div>
 </body>
 </html>
