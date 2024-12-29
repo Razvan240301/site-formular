@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formular Personalizat</title>
     <style>
+        /* Setări generale */
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
             background: url('fundalul.webp') no-repeat center center fixed; /* Imaginea de fundal */
             background-size: cover; /* Acoperă complet fundalul */
+            min-height: 100vh; /* Acoperă întregul ecran */
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Poziționează conținutul mai sus */
-            min-height: 100vh;
         }
 
         form {
             background: rgba(255, 255, 255, 0.9); /* Fundal alb semi-transparent */
             padding: 20px;
-            margin-top: 50px; /* Mutăm formularul mai sus */
-            max-width: 90%;
-            width: 350px;
+            margin: 20px 0;
+            width: 90%; /* Lățime completă pe ecrane mici */
+            max-width: 400px; /* Dimensiune maximă pe ecrane mari */
             border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
@@ -62,58 +62,59 @@
             background: #218838;
         }
 
-        /* Stil pentru imagini rotunde */
+        /* Imagini rotunde */
         .images-container {
             display: flex;
-            justify-content: space-around; /* Poziționare laterală */
+            justify-content: space-around; /* Poziționare laterală pe desktop */
             align-items: center;
             width: 100%;
-            margin-top: 80px; /* Mutăm imaginile mai jos */
+            margin-top: 40px; /* Spațiu deasupra imaginilor */
             z-index: 1;
         }
 
         .circle-image {
             border-radius: 50%; /* Transformă imaginea în cerc */
-            width: 200px; /* Dimensiunea mai mare a imaginii */
-            height: 200px;
+            width: 220px; /* Dimensiunea imaginilor pe desktop */
+            height: 220px;
             object-fit: cover; /* Ajustează imaginea să umple cercul */
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adaugă umbră */
         }
 
-        /* Poziționare pentru telefon */
+        /* Responsive Design pentru telefon */
         @media (max-width: 768px) {
-            body {
-                flex-direction: column; /* Asigurăm ordinea pe verticală */
-            }
-
             form {
-                order: 1; /* Formularul apare primul */
-                margin-top: 20px; /* Mutăm mai sus */
+                margin-top: 10px; /* Mutăm formularul mai sus pe telefon */
             }
 
             .images-container {
                 flex-direction: column; /* Imaginile una sub alta */
-                margin-top: 40px; /* Reducem spațierea pe telefon */
-                order: 2; /* Imaginile apar după formular */
+                margin-top: 20px; /* Spațiu între formular și imagini */
             }
 
             .circle-image {
-                width: 150px; /* Dimensiuni mai mici pentru imagini pe telefon */
-                height: 150px;
+                width: 250px; /* Imagini mai mari pe telefon */
+                height: 250px;
+                margin-bottom: 20px; /* Spațiu între imagini */
             }
         }
 
-        /* Stil pentru text suplimentar */
+        /* Text suplimentar */
         .extra-content {
             text-align: center;
             color: white;
             font-size: 18px;
-            margin-top: 30px;
+            margin-top: 20px;
             z-index: 1;
         }
     </style>
 </head>
 <body>
+    <!-- Text suplimentar -->
+    <div class="extra-content">
+        <p>„Slăbește fără să te înfometezi”</p>
+        <p>Alege un stil de viață sănătos cu ajutorul nostru!</p>
+    </div>
+
     <!-- Formular -->
     <form action="https://formspree.io/f/your-form-endpoint" method="POST">
         <label for="name">Nume:</label>
@@ -128,16 +129,10 @@
         <button type="submit">Trimite</button>
     </form>
 
-    <!-- Imaginile -->
+    <!-- Imagini rotunde -->
     <div class="images-container">
         <img src="burgir.webp" alt="Imagine Burger" class="circle-image">
-        <img src="atlet.webp" alt="Imagine Atlet" class="circle-image">
-    </div>
-
-    <!-- Text suplimentar -->
-    <div class="extra-content">
-        <p>„Slăbește fără să te înfometezi”</p>
-        <p>Alege un stil de viață sănătos cu ajutorul nostru!</p>
+        <img src="atlet2.webp" alt="Imagine Atlet Nou" class="circle-image">
     </div>
 </body>
 </html>
