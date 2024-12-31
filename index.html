@@ -14,17 +14,25 @@
             background-size: cover;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+        }
+
+        /* Container principal pentru layout */
+        .main-container {
+            display: flex;
+            justify-content: center; /* Centrare pe desktop */
+            align-items: center;
+            width: 100%;
+            padding: 20px;
         }
 
         /* Formular */
         form {
             background: rgba(255, 255, 255, 0.9);
-            padding: 15px; /* Reducem padding-ul */
-            margin: 20px 0;
-            width: 90%; /* Lățime completă pe telefon */
-            max-width: 350px; /* Dimensiune mai mică pe desktop */
+            padding: 20px;
+            width: 90%; /* Lățime pe telefon */
+            max-width: 400px; /* Dimensiune maximă pe desktop */
             border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
@@ -38,21 +46,21 @@
         label, input, button {
             display: block;
             width: 100%;
-            margin-bottom: 10px; /* Reducem distanțele */
+            margin-bottom: 10px;
         }
 
         input {
-            padding: 8px; /* Reducem padding-ul */
+            padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 14px; /* Font mai mic */
+            font-size: 14px;
         }
 
         button {
             background: #28a745;
             color: white;
             border: none;
-            padding: 10px; /* Reducem dimensiunea butonului */
+            padding: 12px;
             font-size: 14px;
             cursor: pointer;
             border-radius: 5px;
@@ -64,73 +72,68 @@
         }
 
         /* Imagini rotunde */
-        .images-container {
-            display: flex;
-            flex-direction: column; /* Imaginile una sub alta */
-            align-items: center;
-            width: 100%;
-            margin-top: 20px;
-            z-index: 1;
-        }
-
         .circle-image {
             border-radius: 50%;
-            width: 200px; /* Dimensiune mai mică */
+            width: 200px; /* Dimensiuni pe desktop */
             height: 200px;
             object-fit: cover;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            margin-bottom: 15px; /* Spațiu între imagini */
         }
 
-        /* Ajustări pentru telefon */
+        /* Poziționare pentru desktop */
+        .image-left {
+            margin-right: 20px; /* Spațiu între imagine și formular */
+        }
+
+        .image-right {
+            margin-left: 20px; /* Spațiu între imagine și formular */
+        }
+
+        /* Responsive Design pentru telefon */
         @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column; /* Elemente afișate una sub alta */
+                align-items: center;
+            }
+
             form {
-                width: 95%; /* Formularul ocupă aproape toată lățimea */
-                padding: 10px; /* Reducem padding-ul */
+                margin: 20px 0; /* Spațiu între formular și imagini */
+                width: 95%; /* Formular mai lat pe telefon */
             }
 
             .circle-image {
-                width: 180px; /* Imagini mai mici pe telefon */
-                height: 180px;
-                margin-bottom: 20px; /* Spațiu mai mare între imagini */
+                width: 250px; /* Dimensiuni mai mari pe telefon */
+                height: 250px;
+                margin: 20px 0; /* Spațiu între imagini */
             }
-        }
 
-        /* Text suplimentar */
-        .extra-content {
-            text-align: center;
-            color: white;
-            font-size: 16px; /* Dimensiune mai mică */
-            margin-top: 15px;
-            z-index: 1;
+            .image-left, .image-right {
+                margin: 0; /* Eliminăm spațiul lateral */
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Text suplimentar -->
-    <div class="extra-content">
-        <p>„Slăbește fără să te înfometezi”</p>
-        <p>Alege un stil de viață sănătos cu ajutorul nostru!</p>
-    </div>
+    <div class="main-container">
+        <!-- Imaginea din stânga -->
+        <img src="burgir.webp" alt="Imagine Burger" class="circle-image image-left">
 
-    <!-- Formular -->
-    <form action="https://formspree.io/f/your-form-endpoint" method="POST">
-        <label for="name">Nume:</label>
-        <input type="text" id="name" name="name" placeholder="Nume" required>
+        <!-- Formularul -->
+        <form action="https://formspree.io/f/your-form-endpoint" method="POST">
+            <label for="name">Nume:</label>
+            <input type="text" id="name" name="name" placeholder="Nume" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Email" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
 
-        <label for="phone">Telefon:</label>
-        <input type="tel" id="phone" name="phone" placeholder="Telefon" required>
+            <label for="phone">Telefon:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Telefon" required>
 
-        <button type="submit">Trimite</button>
-    </form>
+            <button type="submit">Trimite</button>
+        </form>
 
-    <!-- Imagini rotunde -->
-    <div class="images-container">
-        <img src="burgir.webp" alt="Imagine Burger" class="circle-image">
-        <img src="atlet2.webp" alt="Imagine Atlet Nou" class="circle-image">
+        <!-- Imaginea din dreapta -->
+        <img src="atlet2.webp" alt="Imagine Atlet Nou" class="circle-image image-right">
     </div>
 </body>
 </html>
