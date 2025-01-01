@@ -15,22 +15,25 @@
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Poziționăm conținutul mai sus */
+            flex-direction: column;
         }
 
         /* Container principal pentru layout */
         .main-container {
             display: flex;
-            justify-content: center; /* Centrare pe desktop */
+            justify-content: space-between; /* Imaginile în lateral pe desktop */
             align-items: center;
             width: 100%;
             padding: 20px;
+            max-width: 1200px; /* Limităm lățimea conținutului */
         }
 
         /* Formular */
         form {
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
+            margin-top: 20px;
             width: 90%; /* Lățime pe telefon */
             max-width: 400px; /* Dimensiune maximă pe desktop */
             border-radius: 10px;
@@ -74,8 +77,8 @@
         /* Imagini rotunde */
         .circle-image {
             border-radius: 50%;
-            width: 200px; /* Dimensiuni pe desktop */
-            height: 200px;
+            width: 250px; /* Dimensiuni mai mari pe desktop */
+            height: 250px;
             object-fit: cover;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
@@ -97,13 +100,13 @@
             }
 
             form {
-                margin: 20px 0; /* Spațiu între formular și imagini */
+                margin-top: 20px; /* Mutăm formularul mai sus pe telefon */
                 width: 95%; /* Formular mai lat pe telefon */
             }
 
             .circle-image {
-                width: 250px; /* Dimensiuni mai mari pe telefon */
-                height: 250px;
+                width: 280px; /* Imagini mai mari pe telefon */
+                height: 280px;
                 margin: 20px 0; /* Spațiu între imagini */
             }
 
